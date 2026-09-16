@@ -1,0 +1,211 @@
+.header {
+  --header-red: #ca0100;
+  --header-text: #262626;
+  --header-muted: #737373;
+  --header-top-bg: #f5f5f5;
+
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  font-family: Roboto, sans-serif;
+  background: #fff;
+  color: var(--header-text);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 12px;
+  background: var(--header-top-bg);
+}
+
+.phone {
+  color: var(--header-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.callback {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--header-red);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.callback img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.mainBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5px;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--header-text);
+  border-radius: 1px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-right: auto;
+}
+
+.logo img {
+  display: block;
+  width: 127px;
+  height: 37px;
+  max-width: 100%;
+}
+
+.phoneTablet {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.iconBtn img {
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--header-red);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header {
+    max-width: 768px;
+  }
+
+  .topBar {
+    display: none;
+  }
+
+  .mainBar {
+    gap: 16px;
+    min-height: 61px;
+    height: 61px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .burger {
+    width: 24px;
+    height: 24px;
+    gap: 4px;
+  }
+
+  .burger span {
+    width: 20px;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .phoneTablet {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 4px;
+    color: var(--header-text);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .phoneIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--header-red);
+  }
+
+  .phoneIcon svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+
+  .actions {
+    gap: 16px;
+  }
+
+  .iconBtn {
+    width: 28px;
+    height: 28px;
+  }
+}

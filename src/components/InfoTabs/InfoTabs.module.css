@@ -1,0 +1,72 @@
+.section {
+  --tabs-text: #262626;
+  --tabs-muted: #737373;
+  --tabs-red: #ca0100;
+  --tabs-line: #e5e5e5;
+
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 8px 12px 28px;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  color: var(--tabs-text);
+}
+
+.tabs {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--tabs-line);
+}
+
+.tab,
+.tabActive {
+  position: relative;
+  margin: 0;
+  padding: 0 0 12px;
+  border: 0;
+  background: transparent;
+  color: var(--tabs-text);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.tabActive {
+  color: var(--tabs-red);
+}
+
+.tabActive::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  border-radius: 2px 2px 0 0;
+  background: var(--tabs-red);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.text {
+  margin: 0;
+  color: var(--tabs-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
