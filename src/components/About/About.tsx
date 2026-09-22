@@ -27,14 +27,24 @@ function About() {
       </p>
 
       <div className={styles.media}>
-        <img
-          className={styles.image}
-          src="/images/about-mobile.jpg"
-          alt="Команда автосалона Альтера"
-          width={296}
-          height={180}
-        />
-        <button type="button" className={styles.play} aria-label="Смотреть видео о компании">
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/about-tablet.jpg"
+          />
+          <img
+            className={styles.image}
+            src="/images/about-mobile.jpg"
+            alt="Команда автосалона Альтера"
+            width={728}
+            height={360}
+          />
+        </picture>
+        <button
+          type="button"
+          className={styles.play}
+          aria-label="Смотреть видео о компании"
+        >
           <PlayIcon />
         </button>
       </div>

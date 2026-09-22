@@ -10,20 +10,28 @@ const specials = [
   },
   {
     id: 2,
-    title: "Первый автомобиль",
+    title: "Семейный автомобиль",
     subtitle: "1,9% по льготной ставке",
-    image: "/images/offer/offer-girl.png",
+    image: "/images/offer/offer-car.png",
   },
   {
     id: 3,
-    title: "Первый автомобиль",
+    title: "Экспресс-кредит",
     subtitle: "1,9% по льготной ставке",
-    image: "/images/offer/offer-girl.png",
+    image: "/images/offer/offer-family.png",
   },
 ];
 
 function Offer() {
   const trackRef = useDragScroll<HTMLDivElement>();
+
+  function scrollBy(direction: -1 | 1) {
+    const track = trackRef.current;
+    if (!track) return;
+    const slide = track.querySelector(`.${styles.slide}`);
+    const step = slide instanceof HTMLElement ? slide.offsetWidth + 24 : 360;
+    track.scrollBy({ left: direction * step, behavior: "smooth" });
+  }
 
   return (
     <section className={styles.section} aria-label="Специальные предложения">
@@ -71,7 +79,46 @@ function Offer() {
       </div>
 
       <div className={styles.specials}>
-        <h2 className={styles.specialsHeading}>Спецпредложения</h2>
+        <div className={styles.specialsHead}>
+          <h2 className={styles.specialsHeading}>Спецпредложения</h2>
+
+          <div className={styles.nav}>
+            <button
+              type="button"
+              className={styles.navPrev}
+              aria-label="Предыдущие спецпредложения"
+              onClick={() => scrollBy(-1)}
+            >
+              <svg viewBox="0 0 12 20" aria-hidden="true" focusable="false">
+                <path
+                  d="M10 2 2 10l8 8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className={styles.navNext}
+              aria-label="Следующие спецпредложения"
+              onClick={() => scrollBy(1)}
+            >
+              <svg viewBox="0 0 12 20" aria-hidden="true" focusable="false">
+                <path
+                  d="M2 2l8 8-8 8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
 
         <div className={styles.track} role="list" ref={trackRef}>
           {specials.map((item) => (

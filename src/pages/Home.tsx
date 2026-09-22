@@ -26,8 +26,8 @@ function Home() {
       <Reviews />
       <About />
       <Blog />
-      <Contacts />
       <InfoTabs />
+      <Contacts />
     </>
   );
 }

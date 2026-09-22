@@ -3,6 +3,7 @@
   --header-text: #262626;
   --header-muted: #737373;
   --header-top-bg: #f5f5f5;
+  --header-border: #e8e8e8;
 
   width: 100%;
   max-width: 320px;
@@ -48,13 +49,25 @@
   flex-shrink: 0;
 }
 
+.desktopTop,
+.desktopNav,
+.slogan,
+.secondaryNav,
+.contactsDesktop {
+  display: none;
+}
+
 .mainBar {
+  background: #fff;
+}
+
+.desktopInner {
   display: flex;
   align-items: center;
   gap: 12px;
   min-height: 56px;
   padding: 10px 12px;
-  background: #fff;
+  box-sizing: border-box;
 }
 
 .burger {
@@ -147,12 +160,11 @@
     display: none;
   }
 
-  .mainBar {
+  .desktopInner {
     gap: 16px;
     min-height: 61px;
     height: 61px;
     padding: 0 20px;
-    box-sizing: border-box;
   }
 
   .burger {
@@ -205,6 +217,245 @@
   }
 
   .iconBtn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header {
+    max-width: 1920px;
+  }
+
+  .desktopTop {
+    display: block;
+    background: var(--header-top-bg);
+  }
+
+  .desktopTop .desktopInner {
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 40px;
+    height: 40px;
+    padding: 0 40px;
+    color: var(--header-muted);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .metaItem,
+  .whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .metaItem svg,
+  .whatsapp svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .whatsapp {
+    color: var(--header-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .mainBar .desktopInner {
+    gap: 20px;
+    min-height: 92px;
+    height: 92px;
+    padding: 0 260px;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .logo img {
+    width: 148px;
+    height: 43px;
+  }
+
+  .slogan {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    border-left: 1px solid var(--header-border);
+    white-space: nowrap;
+  }
+
+  .sloganBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--header-red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .sloganText {
+    color: var(--header-text);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .secondaryNav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-left: 28px;
+    margin-right: auto;
+  }
+
+  .secondaryNav a {
+    color: var(--header-text);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .secondaryAccent {
+    color: var(--header-red) !important;
+    font-weight: 700 !important;
+  }
+
+  .phoneTablet {
+    display: none;
+  }
+
+  .contactsDesktop {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .contactsDesktop .phoneIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contactsDesktop .phoneIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .phones {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .phones a {
+    color: var(--header-text);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .phones a:first-child {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .phones a:last-child {
+    color: var(--header-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .callbackBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 48px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: var(--header-red);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .mainBar .actions {
+    display: none;
+  }
+
+  .desktopNav {
+    display: block;
+    border-top: 1px solid var(--header-border);
+  }
+
+  .desktopNav .desktopInner {
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 65px;
+    height: 65px;
+    padding: 0 260px;
+  }
+
+  .primaryNav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .primaryNav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--header-text);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .primaryNav svg {
+    display: block;
+    width: 10px;
+    height: 6px;
+    flex-shrink: 0;
+  }
+
+  .actionsDesktop {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .actionsDesktop .iconBtn {
     width: 28px;
     height: 28px;
   }

@@ -4,6 +4,7 @@ import styles from "./CarCard.module.css";
 type Car = {
   id: number;
   name: string;
+  trim: string;
   benefit: string;
   price: string;
   credit: string;
@@ -12,46 +13,23 @@ type Car = {
   speed: string;
   accel: string;
   image: string;
+  imageDesktop: string;
 };
 
-const cars: Car[] = [
-  {
-    id: 1,
-    name: "Skoda Octavia 1.6 MPI MT Active",
-    benefit: "Выгода до 300 000 ₽",
-    price: "от 1 615 000 ₽",
-    credit: "от 115 000 ₽/мес.",
-    power: "115 л.с.",
-    fuel: "5.3 л/км",
-    speed: "189 км/ч",
-    accel: "10,3 с.",
-    image: "/images/car-card/car.jpg",
-  },
-  {
-    id: 2,
-    name: "Skoda Octavia 1.6 MPI MT Active",
-    benefit: "Выгода до 300 000 ₽",
-    price: "от 1 615 000 ₽",
-    credit: "от 115 000 ₽/мес.",
-    power: "115 л.с.",
-    fuel: "5.3 л/км",
-    speed: "189 км/ч",
-    accel: "10,3 с.",
-    image: "/images/car-card/car.jpg",
-  },
-  {
-    id: 3,
-    name: "Skoda Octavia 1.6 MPI MT Active",
-    benefit: "Выгода до 300 000 ₽",
-    price: "от 1 615 000 ₽",
-    credit: "от 115 000 ₽/мес.",
-    power: "115 л.с.",
-    fuel: "5.3 л/км",
-    speed: "189 км/ч",
-    accel: "10,3 с.",
-    image: "/images/car-card/car.jpg",
-  },
-];
+const cars: Car[] = Array.from({ length: 6 }, (_, index) => ({
+  id: index + 1,
+  name: "Skoda Octavia",
+  trim: "1.6 MPI MT Active",
+  benefit: "Выгода до 300 000 ₽",
+  price: "от 1 615 000 ₽",
+  credit: "от 115 000 ₽/мес.",
+  power: "115 л.с.",
+  fuel: "5.3 л/км",
+  speed: "189 км/ч",
+  accel: "10,3 с.",
+  image: "/images/car-card/car.jpg",
+  imageDesktop: "/images/car-card/car-desktop.png",
+}));
 
 function GiftIcon() {
   return (
@@ -71,9 +49,15 @@ function GiftIcon() {
 
 function CarCardItem({ car }: { car: Car }) {
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      style={{ ["--desktop-bg" as string]: `url(${car.imageDesktop})` }}
+    >
       <div className={styles.cardTop}>
-        <h3 className={styles.name}>{car.name}</h3>
+        <h3 className={styles.name}>
+          {car.name}
+          <span className={styles.trim}>{car.trim}</span>
+        </h3>
         <div className={styles.actions}>
           <button type="button" className={styles.iconBtn} aria-label="В избранное">
             <img src="/images/heart.svg" alt="" width={17} height={16} />
@@ -117,7 +101,7 @@ function CarCardItem({ car }: { car: Car }) {
         <img
           className={styles.carImage}
           src={car.image}
-          alt={car.name}
+          alt={`${car.name} ${car.trim}`}
           width={290}
           height={171}
           draggable={false}
@@ -204,6 +188,10 @@ function CarCard() {
           </div>
         ))}
       </div>
+
+      <button type="button" className={styles.showMore}>
+        ПОКАЗАТЬ ЕЩЕ
+      </button>
     </section>
   );
 }

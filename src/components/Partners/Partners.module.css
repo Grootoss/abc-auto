@@ -1,6 +1,7 @@
 .section {
   --partners-text: #262626;
   --partners-card: #f0f0f0;
+  --partners-red: #ca0100;
 
   width: 100%;
   max-width: 320px;
@@ -11,12 +12,24 @@
   color: var(--partners-text);
 }
 
-.heading {
-  margin: 0 0 14px;
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
   padding: 0 12px;
+}
+
+.heading {
+  margin: 0;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.25;
+}
+
+.nav {
+  display: none;
 }
 
 .track {
@@ -65,4 +78,115 @@
   object-fit: contain;
   object-position: center;
   pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .section {
+    max-width: 768px;
+  }
+
+  .head {
+    margin-bottom: 16px;
+    padding: 0 20px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .track {
+    grid-template-rows: repeat(2, 72px);
+    grid-auto-columns: calc((100% - 36px) / 4.25);
+    gap: 12px;
+    scroll-padding-left: 20px;
+    padding: 4px 20px 8px;
+  }
+
+  .card {
+    height: 72px;
+    padding: 12px 14px;
+    border-radius: 16px;
+  }
+
+  .logo {
+    max-width: 128px;
+    max-height: 42px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section {
+    max-width: 1920px;
+    padding: 32px 260px 48px;
+  }
+
+  .head {
+    margin-bottom: 24px;
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navPrev,
+  .navNext {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .navPrev {
+    background: #fff;
+    color: #595959;
+    box-shadow: 0 4px 16px rgba(38, 38, 38, 0.12);
+  }
+
+  .navNext {
+    background: var(--partners-red);
+    color: #fff;
+  }
+
+  .navPrev svg,
+  .navNext svg {
+    display: block;
+    width: 12px;
+    height: 20px;
+  }
+
+  .track {
+    display: flex;
+    grid: none;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0;
+    padding: 0;
+    cursor: default;
+  }
+
+  .card {
+    flex: 0 0 calc((100% - 60px) / 4);
+    height: 120px;
+    padding: 20px 24px;
+    border-radius: 20px;
+  }
+
+  .logo {
+    max-width: 220px;
+    max-height: 64px;
+  }
 }

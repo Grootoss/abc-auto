@@ -8,7 +8,7 @@ const navLinks = [
   "Такси в кредит",
 ];
 
-const brandsLeft = [
+const brands = [
   "Kia",
   "Hyundai",
   "Skoda",
@@ -27,9 +27,6 @@ const brandsLeft = [
   "Nissan",
   "Opel",
   "Peugeot",
-];
-
-const brandsRight = [
   "Changan",
   "Chery",
   "CheryExeed",
@@ -59,37 +56,45 @@ const creditLinks = [
   "Trade-in",
 ];
 
-const modelBlocks = [
-  {
-    title: "KIA",
-    accent: false,
-    models:
-      "Picanto (2020), Sorento 2019, Sorento Prime, Sportage New, Rio 2019, Pro Ceed, Mohave 2019, Rio X-Line, Stringer (2020), Optima NEW, Ceed 2020, Cerato 2020, K900, Ceed SW 2020, Soul, Seltos, XCeed, K5, Rio, Sorento, Mohave, Rio X, Carnival, Picanto, Stinger, Cerato, Ceed, Ceed SW",
-  },
-  {
-    title: "HYUNDAI",
-    accent: false,
-    models:
-      "i30, Solaris 2019, Santa Fe 2020, Tucson 2020, H1, Elantra 2019, Sonata, Solaris, Creta 2020, Tucson N Line, Elantra, Palisade, Santa Fe, Tucson, Creta",
-  },
-  {
-    title: "SKODA",
-    accent: false,
-    models:
-      "Octavia Combi, Octavia 2019, Kodiaq 2020, Rapid 2019, Kodiaq Scout, Kodiaq Sportline, Superb New, Superb Combi New, Superb Sportline, Karoq, Rapid, Octavia A8, Kodiaq",
-  },
-  {
-    title: "VOLKSWAGEN",
-    accent: false,
-    models:
-      "Golf (2020), Polo 2019, Passat 2019, Tiguan 2019, Jetta 2019, Touareg, Teramont (2020), Amarok, Passat, Jetta, Polo, Arteon",
-  },
-  {
-    title: "АВТО ПОД ТАКСИ",
-    accent: true,
-    models:
-      "Hyundai Solaris, Skoda Octavia, Volkswagen Polo, Hyundai Solaris, Skoda Octavia, Volkswagen Polo, Hyundai Solaris, Skoda Octavia, Volkswagen Polo, Hyundai Solaris, Skoda Octavia, Volkswagen Polo",
-  },
+const modelCols = [
+  [
+    {
+      title: "KIA",
+      accent: false,
+      models:
+        "Picanto (2020), Sorento 2019, Sorento Prime, Sportage New, Rio 2019, Pro Ceed, Mohave 2019, Rio X-Line, Stringer (2020), Optima NEW, Ceed 2020, Cerato 2020, K900, Ceed SW 2020, Soul, Seltos, XCeed, K5, Rio, Sorento, Mohave, Rio X, Carnival, Picanto, Stinger, Cerato, Ceed, Ceed SW",
+    },
+  ],
+  [
+    {
+      title: "HYUNDAI",
+      accent: false,
+      models:
+        "i30, Solaris 2019, Santa Fe 2020, Tucson 2020, H1, Elantra 2019, Sonata, Solaris, Creta 2020, Tucson N Line, Elantra, Palisade, Santa Fe, Tucson, Creta",
+    },
+  ],
+  [
+    {
+      title: "SKODA",
+      accent: false,
+      models:
+        "Octavia Combi, Octavia 2019, Kodiaq 2020, Rapid 2019, Kodiaq Scout, Kodiaq Sportline, Superb New, Superb Combi New, Superb Sportline, Karoq, Rapid, Octavia A8, Kodiaq",
+    },
+  ],
+  [
+    {
+      title: "VOLKSWAGEN",
+      accent: false,
+      models:
+        "Golf (2020), Polo 2019, Passat 2019, Tiguan 2019, Jetta 2019, Touareg, Teramont (2020), Amarok, Passat, Jetta, Polo, Arteon",
+    },
+    {
+      title: "АВТО ПОД ТАКСИ",
+      accent: true,
+      models:
+        "Hyundai Solaris, Skoda Octavia, Volkswagen Polo, Hyundai Solaris, Skoda Octavia, Volkswagen Polo, Hyundai Solaris, Skoda Octavia, Volkswagen Polo, Hyundai Solaris, Skoda Octavia, Volkswagen Polo",
+    },
+  ],
 ];
 
 function PhoneIcon() {
@@ -137,95 +142,121 @@ function Footer() {
           ))}
         </nav>
 
-        <section className={styles.block}>
-          <div className={styles.blockHead}>
-            <h2 className={styles.heading}>
-              Каталог авто
-              <span className={styles.accent} aria-hidden="true" />
-            </h2>
-            <a className={styles.more} href="#">
-              Подробнее
-            </a>
-          </div>
-          <div className={styles.brands}>
-            <ul className={styles.brandCol}>
-              {brandsLeft.map((brand) => (
+        <div className={styles.main}>
+          <section className={styles.block}>
+            <div className={styles.blockHead}>
+              <h2 className={styles.heading}>
+                Каталог авто
+                <span className={styles.accent} aria-hidden="true" />
+              </h2>
+              <div className={styles.blockHeadLinks}>
+                <a className={styles.more} href="#">
+                  Подробнее
+                </a>
+                <a className={styles.sitemapHead} href="#sitemap">
+                  Карта сайта
+                </a>
+              </div>
+            </div>
+            <ul className={styles.brands}>
+              {brands.map((brand) => (
                 <li key={brand}>
                   <a href="#">{brand}</a>
                 </li>
               ))}
             </ul>
-            <ul className={styles.brandCol}>
-              {brandsRight.map((brand) => (
-                <li key={brand}>
-                  <a href="#">{brand}</a>
+          </section>
+
+          <div className={styles.mid}>
+            <section className={styles.block}>
+              <h2 className={styles.heading}>
+                Кредит и рассрочка
+                <span className={styles.accent} aria-hidden="true" />
+              </h2>
+              <ul className={styles.linkList}>
+                {creditLinks.map((label) => (
+                  <li key={label}>
+                    <a href="#">{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className={styles.block}>
+              <h2 className={styles.heading}>
+                Контакты
+                <span className={styles.accent} aria-hidden="true" />
+              </h2>
+
+              <ul className={styles.contacts}>
+                <li className={styles.contactItem}>
+                  <span className={styles.icon}>
+                    <PhoneIcon />
+                  </span>
+                  <div className={styles.phones}>
+                    <a href="tel:+78005519431">+7 (800) 551-94-31</a>
+                    <a href="tel:+74952921867">+7 (495) 292-18-67</a>
+                  </div>
                 </li>
-              ))}
-            </ul>
+                <li className={styles.contactItem}>
+                  <span className={styles.icon}>
+                    <ClockIcon />
+                  </span>
+                  <span className={styles.hours}>
+                    <span className={styles.hoursShort}>с 08:00 до 21:00</span>
+                    <span className={styles.hoursFull}>
+                      Ежедневно с 08:00 до 21:00
+                    </span>
+                  </span>
+                </li>
+                <li className={styles.contactItem}>
+                  <span className={styles.icon}>
+                    <PinIcon />
+                  </span>
+                  <div>
+                    <p className={styles.address}>Россия, Москва, 38КМ МКАД, 6Бс1</p>
+                    <div className={styles.addressLinks}>
+                      <a className={styles.route} href="#directions">
+                        Схема проезда
+                      </a>
+                      <a className={styles.sitemap} href="#sitemap">
+                        Карта сайта
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <button type="button" className={styles.city}>
+                Москва
+                <span className={styles.chevron} aria-hidden="true" />
+              </button>
+            </section>
           </div>
-        </section>
-
-        <section className={styles.block}>
-          <h2 className={styles.heading}>
-            Кредит и рассрочка
-            <span className={styles.accent} aria-hidden="true" />
-          </h2>
-          <ul className={styles.linkList}>
-            {creditLinks.map((label) => (
-              <li key={label}>
-                <a href="#">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className={styles.block}>
-          <h2 className={styles.heading}>
-            Контакты
-            <span className={styles.accent} aria-hidden="true" />
-          </h2>
-
-          <ul className={styles.contacts}>
-            <li className={styles.contactItem}>
-              <span className={styles.icon}>
-                <PhoneIcon />
-              </span>
-              <div className={styles.phones}>
-                <a href="tel:+78005519431">+7 (800) 551-94-31</a>
-                <a href="tel:+74952921867">+7 (495) 292-18-67</a>
-              </div>
-            </li>
-            <li className={styles.contactItem}>
-              <span className={styles.icon}>
-                <ClockIcon />
-              </span>
-              <span>с 08:00 до 21:00</span>
-            </li>
-            <li className={styles.contactItem}>
-              <span className={styles.icon}>
-                <PinIcon />
-              </span>
-              <div>
-                <p className={styles.address}>Россия, Москва, 38КМ МКАД, 6Бс1</p>
-                <div className={styles.addressLinks}>
-                  <a className={styles.route} href="#directions">
-                    Схема проезда
-                  </a>
-                  <a className={styles.sitemap} href="#sitemap">
-                    Карта сайта
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-
-          <button type="button" className={styles.city}>
-            Москва
-            <span className={styles.chevron} aria-hidden="true" />
-          </button>
-        </section>
+        </div>
 
         <section className={styles.bottom}>
+          <div className={styles.legalCol}>
+            <p className={styles.copy}>
+              © 2021 Автосалон &quot;ABC AUTO&quot;.
+              <br />
+              Официальный дилер
+            </p>
+            <a className={styles.legal} href="#">
+              Политика конфиденциальности
+            </a>
+            <a className={styles.legal} href="#">
+              Пользовательское соглашение
+            </a>
+          </div>
+
+          <p className={styles.disclaimer}>
+            Обращаем Ваше внимание на то, что данный интернет-сайт носит
+            исключительно информационный характер и ни при каких условиях не
+            является публичной офертой, определяемой положениями Статьи 437
+            Гражданского кодекса Российской Федерации.
+          </p>
+
           <div className={styles.rating} aria-label="Рейтинг в Яндексе 5,0 из 5">
             <div className={styles.ratingMain}>
               <span className={styles.yandex}>Я</span>
@@ -244,35 +275,23 @@ function Footer() {
             </div>
             <p className={styles.ratingCaption}>Рейтинг организации в Яндексе</p>
           </div>
-
-          <p className={styles.copy}>
-            © 2021 Автосалон &quot;ABC AUTO&quot;. Официальный дилер
-          </p>
-          <a className={styles.legal} href="#">
-            Политика конфиденциальности
-          </a>
-          <a className={styles.legal} href="#">
-            Пользовательское соглашение
-          </a>
-          <p className={styles.disclaimer}>
-            Обращаем Ваше внимание на то, что данный интернет-сайт носит
-            исключительно информационный характер и ни при каких условиях не
-            является публичной офертой, определяемой положениями Статьи 437
-            Гражданского кодекса Российской Федерации.
-          </p>
         </section>
 
         <section className={styles.models} aria-label="Модели автомобилей">
-          {modelBlocks.map((block) => (
-            <div key={block.title} className={styles.modelBlock}>
-              <h3
-                className={
-                  block.accent ? styles.modelTitleAccent : styles.modelTitle
-                }
-              >
-                {block.title}
-              </h3>
-              <p className={styles.modelText}>{block.models}</p>
+          {modelCols.map((col, index) => (
+            <div key={index} className={styles.modelsCol}>
+              {col.map((block) => (
+                <div key={block.title} className={styles.modelBlock}>
+                  <h3
+                    className={
+                      block.accent ? styles.modelTitleAccent : styles.modelTitle
+                    }
+                  >
+                    {block.title}
+                  </h3>
+                  <p className={styles.modelText}>{block.models}</p>
+                </div>
+              ))}
             </div>
           ))}
         </section>

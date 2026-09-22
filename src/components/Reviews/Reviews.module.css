@@ -150,3 +150,116 @@
   border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg);
 }
+
+@media (min-width: 768px) {
+  .section {
+    max-width: 768px;
+  }
+
+  .heading {
+    margin-bottom: 16px;
+    padding: 0 20px;
+    font-size: 24px;
+  }
+
+  .track {
+    gap: 16px;
+    scroll-padding-left: 20px;
+    padding: 4px 20px 8px;
+  }
+
+  .card {
+    flex: 0 0 calc((100% - 16px) / 2.2);
+    min-width: 0;
+    border-radius: 28px;
+  }
+
+  .media {
+    height: 200px;
+  }
+
+  .body {
+    gap: 12px;
+    padding: 18px 20px 20px;
+  }
+
+  .name {
+    font-size: 17px;
+  }
+
+  .text {
+    font-size: 14px;
+    -webkit-line-clamp: 6;
+  }
+
+  .more {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .section {
+    max-width: 1920px;
+    padding: 32px 260px 48px;
+  }
+
+  .heading {
+    margin-bottom: 24px;
+    padding: 0;
+    font-size: 32px;
+  }
+
+  .track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    overflow: visible;
+    scroll-snap-type: none;
+    scroll-padding: 0;
+    padding: 0;
+    cursor: default;
+  }
+
+  .card {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    border-radius: 28px;
+  }
+
+  .media {
+    height: 260px;
+  }
+
+  .logoMark {
+    width: 120px;
+    height: 120px;
+    font-size: 56px;
+  }
+
+  .playIcon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .body {
+    gap: 14px;
+    padding: 24px 28px 28px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-line-clamp: 5;
+  }
+
+  .more {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}

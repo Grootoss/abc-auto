@@ -36,48 +36,68 @@ function PinIcon() {
 function Contacts() {
   return (
     <section className={styles.section} aria-label="Контакты">
-      <div className={styles.mapWrap}>
-        <img
-          className={styles.map}
-          src="/images/map.jpg"
-          alt="Карта проезда к автосалону"
-          width={296}
-          height={360}
-        />
-      </div>
+      <div className={styles.mapBlock}>
+        <div className={styles.mapWrap}>
+          <picture>
+            <source
+              media="(min-width: 1920px)"
+              srcSet="/images/map-desktop.jpg"
+            />
+            <source media="(min-width: 768px)" srcSet="/images/map-tablet.jpg" />
+            <img
+              className={styles.map}
+              src="/images/map.jpg"
+              alt="Карта проезда к автосалону"
+              width={728}
+              height={400}
+            />
+          </picture>
+          <img
+            className={styles.pin}
+            src="/images/pin.svg"
+            alt=""
+            width={35}
+            height={49}
+            aria-hidden="true"
+          />
+        </div>
 
-      <div className={styles.card}>
-        <ul className={styles.list}>
-          <li className={styles.item}>
-            <span className={styles.icon}>
-              <PhoneIcon />
-            </span>
-            <div className={styles.phones}>
-              <a href="tel:+78005519431">+7 (800) 551-94-31</a>
-              <a href="tel:+74952921867">+7 (495) 292-18-67</a>
-            </div>
-          </li>
-          <li className={styles.item}>
-            <span className={styles.icon}>
-              <ClockIcon />
-            </span>
-            <span>с 08:00 до 21:00</span>
-          </li>
-          <li className={styles.item}>
-            <span className={styles.icon}>
-              <PinIcon />
-            </span>
-            <span>
-              Россия, Москва,
-              <br />
-              38КМ МКАД, 6Бс1
-            </span>
-          </li>
-        </ul>
+        <div className={styles.card}>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <span className={styles.icon}>
+                <PhoneIcon />
+              </span>
+              <div className={styles.phones}>
+                <a href="tel:+78005519431">+7 (800) 551-94-31</a>
+                <a href="tel:+74952921867">+7 (495) 292-18-67</a>
+              </div>
+            </li>
+            <li className={styles.item}>
+              <span className={styles.icon}>
+                <ClockIcon />
+              </span>
+              <span className={styles.hours}>
+                <span className={styles.hoursShort}>с 08:00 до 21:00</span>
+                <span className={styles.hoursFull}>Ежедневно с 08:00 до 21:00</span>
+              </span>
+            </li>
+            <li className={styles.item}>
+              <span className={styles.icon}>
+                <PinIcon />
+              </span>
+              <span>
+                Россия, Москва,
+                <br />
+                38КМ МКАД, 6Бс1
+              </span>
+            </li>
+          </ul>
 
-        <a className={styles.button} href="#directions">
-          КАК ДО НАС ДОБРАТЬСЯ
-        </a>
+          <a className={styles.button} href="#directions">
+            КАК ДО НАС ДОБРАТЬСЯ
+          </a>
+        </div>
       </div>
     </section>
   );
