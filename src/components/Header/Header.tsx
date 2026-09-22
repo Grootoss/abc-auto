@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import { asset } from "../../utils/asset";
 
 function PhoneIcon() {
   return (
@@ -80,15 +81,15 @@ function HeaderActions({ className }: { className?: string }) {
   return (
     <div className={className ?? styles.actions}>
       <button type="button" className={styles.iconBtn} aria-label="Избранное">
-        <img src="/images/heart.svg" alt="" width={17} height={16} />
+        <img src={asset("/images/heart.svg")} alt="" width={17} height={16} />
         <span className={styles.badge}>10</span>
       </button>
       <button type="button" className={styles.iconBtn} aria-label="Сравнение">
-        <img src="/images/rating.svg" alt="" width={13} height={16} />
+        <img src={asset("/images/rating.svg")} alt="" width={13} height={16} />
         <span className={styles.badge}>12</span>
       </button>
       <button type="button" className={styles.iconBtn} aria-label="Поиск">
-        <img src="/images/search.svg" alt="" width={16} height={16} />
+        <img src={asset("/images/search.svg")} alt="" width={16} height={16} />
       </button>
     </div>
   );
@@ -102,7 +103,7 @@ function Header() {
           +7 (800) 551-94-31
         </a>
         <a className={styles.callback} href="#callback">
-          <img src="/images/red-phone.svg" alt="" width={12} height={12} />
+          <img src={asset("/images/red-phone.svg")} alt="" width={12} height={12} />
           Обратный звонок
         </a>
       </div>
@@ -139,7 +140,7 @@ function Header() {
 
           <Link to="/" className={styles.logo} aria-label="ABC AUTO — на главную">
             <img
-              src="/images/logo-mobile.svg"
+              src={asset("/images/logo-mobile.svg")}
               alt="ABC AUTO — Официальный дилер"
               width={127}
               height={37}

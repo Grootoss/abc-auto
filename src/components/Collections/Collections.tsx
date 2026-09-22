@@ -1,26 +1,27 @@
 import { useDragScroll } from "../../hooks/useDragScroll";
 import styles from "./Collections.module.css";
+import { asset } from "../../utils/asset";
 
 const items = [
   {
     id: 1,
     title: "Семейные автомобили",
-    imageMobile: "/images/set/set-mobile-slide-1.jpg",
-    imageTablet: "/images/set/set-mobile-slide-1.jpg",
+    imageMobile: asset("/images/set/set-mobile-slide-1.jpg"),
+    imageTablet: asset("/images/set/set-mobile-slide-1.jpg"),
   },
   {
     id: 2,
     title: "Автомобили для путешествий",
-    imageMobile: "/images/set/set-mobile-slide-1.jpg",
-    imageTablet: "/images/set/set-tablet-slide-2.jpg",
-    imageDesktop: "/images/set/set-desktop-slide-2.jpg",
+    imageMobile: asset("/images/set/set-mobile-slide-1.jpg"),
+    imageTablet: asset("/images/set/set-tablet-slide-2.jpg"),
+    imageDesktop: asset("/images/set/set-desktop-slide-2.jpg"),
   },
   {
     id: 3,
     title: "Городские автомобили",
-    imageMobile: "/images/set/set-mobile-slide-1.jpg",
-    imageTablet: "/images/set/set-tablet-slide-2.jpg",
-    imageDesktop: "/images/set/set-desktop-slide-3.jpg",
+    imageMobile: asset("/images/set/set-mobile-slide-1.jpg"),
+    imageTablet: asset("/images/set/set-tablet-slide-2.jpg"),
+    imageDesktop: asset("/images/set/set-desktop-slide-3.jpg"),
   },
 ];
 

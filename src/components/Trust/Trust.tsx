@@ -1,5 +1,6 @@
 import { useDragScroll } from "../../hooks/useDragScroll";
 import styles from "./Trust.module.css";
+import { asset } from "../../utils/asset";
 
 const reviews = [
   { id: 1, title: "Сайт отзовик" },
@@ -13,13 +14,13 @@ const reviews = [
 const maps = [
   {
     id: "yandex",
-    logo: "/images/yandex-map.svg",
+    logo: asset("/images/yandex-map.svg"),
     alt: "Яндекс Карты",
     score: "4.5",
   },
   {
     id: "google",
-    logo: "/images/google-map.svg",
+    logo: asset("/images/google-map.svg"),
     alt: "Google Maps",
     score: "4.1",
   },

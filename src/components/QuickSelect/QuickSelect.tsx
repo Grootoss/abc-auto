@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./QuickSelect.module.css";
+import { asset } from "../../utils/asset";
 
 const brands = [
   { name: "Kia", logo: "kia-logo.svg" },
@@ -101,7 +102,7 @@ function QuickSelect() {
               >
                 <img
                   className={styles.brandLogo}
-                  src={`/images/quick-select/cars-logo/${brand.logo}`}
+                  src={asset(`/images/quick-select/cars-logo/${brand.logo}`)}
                   alt=""
                   width={28}
                   height={28}

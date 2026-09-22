@@ -1,24 +1,25 @@
 import { useDragScroll } from "../../hooks/useDragScroll";
 import styles from "./Offer.module.css";
+import { asset } from "../../utils/asset";
 
 const specials = [
   {
     id: 1,
     title: "Первый автомобиль",
     subtitle: "1,9% по льготной ставке",
-    image: "/images/offer/offer-girl.png",
+    image: asset("/images/offer/offer-girl.png"),
   },
   {
     id: 2,
     title: "Семейный автомобиль",
     subtitle: "1,9% по льготной ставке",
-    image: "/images/offer/offer-car.png",
+    image: asset("/images/offer/offer-car.png"),
   },
   {
     id: 3,
     title: "Экспресс-кредит",
     subtitle: "1,9% по льготной ставке",
-    image: "/images/offer/offer-family.png",
+    image: asset("/images/offer/offer-family.png"),
   },
 ];
 
@@ -38,7 +39,7 @@ function Offer() {
       <div className={styles.card}>
         <img
           className={styles.hand}
-          src="/images/offer/offer-hand.png"
+          src={asset("/images/offer/offer-hand.png")}
           alt=""
           width={290}
           height={195}

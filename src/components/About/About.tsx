@@ -1,4 +1,5 @@
 import styles from "./About.module.css";
+import { asset } from "../../utils/asset";
 
 function PlayIcon() {
   return (
@@ -30,11 +31,11 @@ function About() {
         <picture>
           <source
             media="(min-width: 768px)"
-            srcSet="/images/about-tablet.jpg"
+            srcSet={asset("/images/about-tablet.jpg")}
           />
           <img
             className={styles.image}
-            src="/images/about-mobile.jpg"
+            src={asset("/images/about-mobile.jpg")}
             alt="Команда автосалона Альтера"
             width={728}
             height={360}

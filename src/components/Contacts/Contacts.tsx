@@ -1,4 +1,5 @@
 import styles from "./Contacts.module.css";
+import { asset } from "../../utils/asset";
 
 function PhoneIcon() {
   return (
@@ -41,12 +42,12 @@ function Contacts() {
           <picture>
             <source
               media="(min-width: 1920px)"
-              srcSet="/images/map-desktop.jpg"
+              srcSet={asset("/images/map-desktop.jpg")}
             />
-            <source media="(min-width: 768px)" srcSet="/images/map-tablet.jpg" />
+            <source media="(min-width: 768px)" srcSet={asset("/images/map-tablet.jpg")} />
             <img
               className={styles.map}
-              src="/images/map.jpg"
+              src={asset("/images/map.jpg")}
               alt="Карта проезда к автосалону"
               width={728}
               height={400}
@@ -54,7 +55,7 @@ function Contacts() {
           </picture>
           <img
             className={styles.pin}
-            src="/images/pin.svg"
+            src={asset("/images/pin.svg")}
             alt=""
             width={35}
             height={49}

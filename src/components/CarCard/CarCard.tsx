@@ -1,5 +1,6 @@
 import { useDragScroll } from "../../hooks/useDragScroll";
 import styles from "./CarCard.module.css";
+import { asset } from "../../utils/asset";
 
 type Car = {
   id: number;
@@ -27,8 +28,8 @@ const cars: Car[] = Array.from({ length: 6 }, (_, index) => ({
   fuel: "5.3 л/км",
   speed: "189 км/ч",
   accel: "10,3 с.",
-  image: "/images/car-card/car.jpg",
-  imageDesktop: "/images/car-card/car-desktop.png",
+  image: asset("/images/car-card/car.jpg"),
+  imageDesktop: asset("/images/car-card/car-desktop.png"),
 }));
 
 function GiftIcon() {
@@ -60,10 +61,10 @@ function CarCardItem({ car }: { car: Car }) {
         </h3>
         <div className={styles.actions}>
           <button type="button" className={styles.iconBtn} aria-label="В избранное">
-            <img src="/images/heart.svg" alt="" width={17} height={16} />
+            <img src={asset("/images/heart.svg")} alt="" width={17} height={16} />
           </button>
           <button type="button" className={styles.iconBtn} aria-label="Сравнить">
-            <img src="/images/rating.svg" alt="" width={13} height={16} />
+            <img src={asset("/images/rating.svg")} alt="" width={13} height={16} />
           </button>
         </div>
       </div>

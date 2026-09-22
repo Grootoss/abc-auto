@@ -1,11 +1,12 @@
 import { useDragScroll } from "../../hooks/useDragScroll";
 import styles from "./Partners.module.css";
+import { asset } from "../../utils/asset";
 
 const logos = [
-  { src: "/images/banks/alpha-1.svg", alt: "Альфа Страхование" },
-  { src: "/images/banks/vsk-2.svg", alt: "ВСК Страховой дом" },
-  { src: "/images/banks/sovcom-3.svg", alt: "Совкомбанк Страхование" },
-  { src: "/images/banks/rosgos-4.svg", alt: "Росгосстрах" },
+  { src: asset("/images/banks/alpha-1.svg"), alt: "Альфа Страхование" },
+  { src: asset("/images/banks/vsk-2.svg"), alt: "ВСК Страховой дом" },
+  { src: asset("/images/banks/sovcom-3.svg"), alt: "Совкомбанк Страхование" },
+  { src: asset("/images/banks/rosgos-4.svg"), alt: "Росгосстрах" },
 ];
 
 const partners = Array.from({ length: 20 }, (_, index) => ({

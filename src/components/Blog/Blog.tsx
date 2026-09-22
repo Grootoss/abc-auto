@@ -1,40 +1,41 @@
 import { useDragScroll } from "../../hooks/useDragScroll";
 import styles from "./Blog.module.css";
+import { asset } from "../../utils/asset";
 
 const posts = [
   {
     id: 1,
-    image: "/images/blog/blog-mobile-slide-1.jpg",
+    image: asset("/images/blog/blog-mobile-slide-1.jpg"),
     date: "25 октября",
     title: "Тест Skoda Karoq Scout - городской карлик или настоящий скаут",
   },
   {
     id: 2,
-    image: "/images/blog/blog-mobile-slide-1.jpg",
+    image: asset("/images/blog/blog-mobile-slide-1.jpg"),
     date: "25 октября",
     title: "Тест Skoda Karoq Scout - городской карлик или настоящий скаут",
   },
   {
     id: 3,
-    image: "/images/blog/blog-mobile-slide-1.jpg",
+    image: asset("/images/blog/blog-mobile-slide-1.jpg"),
     date: "25 октября",
     title: "Тест Skoda Karoq Scout - городской карлик или настоящий скаут",
   },
   {
     id: 4,
-    image: "/images/blog/blog-mobile-slide-1.jpg",
+    image: asset("/images/blog/blog-mobile-slide-1.jpg"),
     date: "25 октября",
     title: "Тест Skoda Karoq Scout - городской карлик или настоящий скаут",
   },
   {
     id: 5,
-    image: "/images/blog/blog-mobile-slide-1.jpg",
+    image: asset("/images/blog/blog-mobile-slide-1.jpg"),
     date: "25 октября",
     title: "Тест Skoda Karoq Scout - городской карлик или настоящий скаут",
   },
   {
     id: 6,
-    image: "/images/blog/blog-mobile-slide-1.jpg",
+    image: asset("/images/blog/blog-mobile-slide-1.jpg"),
     date: "25 октября",
     title: "Тест Skoda Karoq Scout - городской карлик или настоящий скаут",
   },

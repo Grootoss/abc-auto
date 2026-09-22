@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import styles from "./Order.module.css";
+import { asset } from "../../utils/asset";
 
 const loanMarks = [
   { value: 0, label: "0" },
@@ -106,10 +107,10 @@ function Order() {
             </div>
 
             <picture>
-              <source media="(min-width: 1920px)" srcSet="/images/car-hide.png" />
+              <source media="(min-width: 1920px)" srcSet={asset("/images/car-hide.png")} />
               <img
                 className={styles.car}
-                src="/images/order/order-car-mobile.png"
+                src={asset("/images/order/order-car-mobile.png")}
                 alt="Автомобиль"
                 width={250}
                 height={139}
